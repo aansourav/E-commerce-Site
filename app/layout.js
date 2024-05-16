@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { CartProvider } from "@/context/cart-context";
 import "./globals.css";
 
 export const metadata = {
@@ -11,7 +12,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                 <Navbar />
-                {children}
+                <CartProvider>{children}</CartProvider>
             </body>
         </html>
     );

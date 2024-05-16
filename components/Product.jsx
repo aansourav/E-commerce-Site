@@ -1,3 +1,6 @@
+"use client";
+import { CartContext } from "@/context/cart-context";
+import { useContext } from "react";
 import StarIcon from "./StarIcon";
 
 const Product = ({ product }) => {
@@ -7,6 +10,14 @@ const Product = ({ product }) => {
         image,
         rating: { rate, count },
     } = product;
+
+    const { cart, addToCart, removeFromCart } = useContext(CartContext);
+
+    const handleCart = () => {
+        addToCart(product);
+        localStorage.setItem("cart", JSON.stringify([...cart, product]));
+    };
+
     return (
         <div className="col-span-4 border border-[#D4D5D9] rounded-md pt-3 px-1">
             <div>
@@ -36,7 +47,10 @@ const Product = ({ product }) => {
                         <div className="font-inter text-[18px] text-price font-bold">
                             ${price}
                         </div>
-                        <button className="bg-baseBlack py-2 px-3 rounded-md font-inter text-[16px] text-baseWhite">
+                        <button
+                            onClick={handleCart}
+                            className="bg-baseBlack py-2 px-3 rounded-md font-inter text-[16px] text-baseWhite"
+                        >
                             Add To Cart
                         </button>
                     </div>
