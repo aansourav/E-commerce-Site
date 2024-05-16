@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { CartContext } from "@/context/cart-context";
+import Image from "next/image";
 import { useContext } from "react";
 import StarIcon from "./StarIcon";
 
@@ -12,7 +13,7 @@ const CartProduct = ({ product }) => {
         rating: { rate, count },
     } = product;
 
-    const { cart, removeFromCart } = useContext(CartContext);
+    const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
     const handleDelete = () => {
         removeFromCart(product.id);
@@ -21,29 +22,31 @@ const CartProduct = ({ product }) => {
             JSON.stringify(cart.filter((item) => item.id !== product.id))
         );
     };
-
     return (
-        <div className="flex items-center border justify-between border-[#D4D5D9] bg-[#f7f8f8] mt-4 rounded-md gap-4 h-[160px] pl-2 pr-2">
-            <div className="flex-shrink-0 w-[130px] h-[130px]">
-                <img
+        <div className="flex items-center justify-between border border-[#D4D5D9] bg-[#f7f8f8]  mt-4 rounded-md rounded-bl-none gap-4 max-h-[150px]">
+            <div className="w-[240px] h-[150px]">
+                <Image
                     src={image}
                     alt="product"
-                    className="w-full h-full object-contain"
+                    width={100}
+                    height={75}
+                    className="w-[240px] h-[150px] object-contain  rounded-t-md"
                 />
             </div>
-            <div className="flex flex-grow flex-col justify-between py-2 pr-2">
-                <p className="text-[16px] text-baseBlack font-inter ">
+
+            <div className="py-2 pr-2">
+                <p className="text-[16px] text-baseBlack font-inter">
                     {title?.length > 45
                         ? `${title.substring(0, 45)} ...`
                         : title}
                 </p>
-                <div className="flex items-center justify-between mt-3">
-                    <div className="flex items-center gap-1">
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1 mt-3">
                         {Array.from({ length: Math.round(rate) }, (_, i) => (
                             <StarIcon key={i} />
                         ))}
                     </div>
-                    <button onClick={handleDelete} className="ml-4">
+                    <button onClick={handleDelete}>
                         <svg
                             width="18"
                             height="21"
@@ -58,11 +61,12 @@ const CartProduct = ({ product }) => {
                         </svg>
                     </button>
                 </div>
-                <p className="font-[14px] font-inter text-[#ADB0B7]">
-                    ({count} Review{count !== 1 && "s"})
+
+                <p className="font-[14px] font-inter text-[#ADB0B7] mt-1">
+                    ({count} Review)
                 </p>
 
-                <div className="font-inter text-[18px] text-price font-bold mt-2">
+                <div className="font-inter text-[18px] text-price font-bold">
                     ${price}
                 </div>
             </div>
