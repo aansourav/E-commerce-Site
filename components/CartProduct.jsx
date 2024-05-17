@@ -2,6 +2,7 @@
 "use client";
 
 import { CartContext } from "@/context/cart-context";
+import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import StarIcon from "./StarIcon";
 
@@ -13,6 +14,7 @@ const CartProduct = ({ product }) => {
         rating: { rate, count },
     } = product;
 
+    const path = usePathname();
     const { cart, removeFromCart } = useContext(CartContext);
 
     const handleDelete = () => {
@@ -34,8 +36,11 @@ const CartProduct = ({ product }) => {
             </div>
             <div className="flex flex-grow flex-col justify-between py-2 pr-2">
                 <p className="text-[16px] text-baseBlack font-inter ">
-                    {title?.length > 45
-                        ? `${title.substring(0, 45)} ...`
+                    {title?.length > 35
+                        ? `${title.substring(
+                              0,
+                              path === "/cart" ? 45 : 35
+                          )} ...`
                         : title}
                 </p>
                 <div className="flex items-center justify-between mt-3">
