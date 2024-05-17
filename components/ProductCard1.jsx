@@ -1,4 +1,5 @@
 "use client";
+
 import { CartContext } from "@/context/cart-context";
 import { useContext } from "react";
 import StarIcon from "./StarIcon";

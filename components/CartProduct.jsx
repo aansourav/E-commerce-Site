@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 import { CartContext } from "@/context/cart-context";
 import { useContext } from "react";
 import StarIcon from "./StarIcon";
@@ -62,7 +63,7 @@ const CartProduct = ({ product }) => {
                     ({count} Review{count !== 1 && "s"})
                 </p>
 
-                <div className="font-inter text-[18px] text-price font-bold mt-2">
+                <div className="font-inter text-[18px] text-price font-bold mt-2 ">
                     ${price}
                 </div>
             </div>
