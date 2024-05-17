@@ -39,7 +39,7 @@ const CartProduct = ({ product }) => {
                     {title?.length > 35
                         ? `${title.substring(
                               0,
-                              path === "/cart" ? 45 : 35
+                              path === "/cart" ? 55 : 35
                           )} ...`
                         : title}
                 </p>

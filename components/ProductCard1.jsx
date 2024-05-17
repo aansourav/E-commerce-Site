@@ -18,7 +18,7 @@ const ProductCard1 = ({ product }) => {
         addToCart(product);
     };
     return (
-        <div className="col-span-4 border border-[#D4D5D9] rounded-md pt-3 px-1">
+        <div className="lg:col-span-4 md:col-span-6 col-span-12 border border-[#D4D5D9] rounded-md pt-3 px-1">
             <div>
                 <div
                     className={`relative delay-150 w-full h-[180px] bg-[#f8f8f8] bg-contain bg-no-repeat bg-center transition-all duration-3000 ease-in-out transform rounded-t-md`}

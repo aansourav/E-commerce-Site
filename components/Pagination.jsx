@@ -1,6 +1,6 @@
 const Pagination = () => {
     return (
-        <div className="col-span-8 ml-auto">
+        <div className="lg:col-span-8 col-span-12 lg:ml-auto">
             <svg
                 width="732"
                 height="62"

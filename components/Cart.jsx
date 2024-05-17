@@ -5,12 +5,12 @@ import { useContext } from "react";
 import CartProduct from "./CartProduct";
 
 const Cart = () => {
-    const { cart, addToCart, removeFromCart } = useContext(CartContext);
+    const { cart } = useContext(CartContext);
     const total = cart.reduce((acc, item) => acc + item.price, 0);
     const path = usePathname();
 
     return (
-        <div className="border border-[#D4D5D9] rounded-md w-full px-2 py-3 col-span-4 mt-14 h-fit">
+        <>
             <p className="text-baseWhite text-[12px] font-bold tracking-[.25em] bg-baseBlack w-full py-3 px-3 uppercase rounded-md text-center">
                 Selected Products
             </p>
@@ -58,7 +58,7 @@ const Cart = () => {
             >
                 CHECKOUT
             </button>
-        </div>
+        </>
     );
 };
 

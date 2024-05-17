@@ -10,14 +10,14 @@ const ProductCardByType = ({ products }) => {
 
     if (listType)
         return (
-            <div className="col-span-8 flex flex-col gap-4 mt-12">
+            <div className="lg:col-span-8 col-span-12 flex flex-col gap-4 mt-12">
                 {products.map((product) => (
                     <ProductCard2 key={product.id} product={product} />
                 ))}
             </div>
         );
     return (
-        <div className="col-span-8 mt-4">
+        <div className="lg:col-span-8 col-span-12  mt-4">
             <div className="grid grid-cols-12 gap-4 mt-10">
                 {products.map((product) => (
                     <ProductCard1 key={product.id} product={product} />

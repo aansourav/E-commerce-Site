@@ -20,7 +20,9 @@ export default async function Home() {
 
             <main className="grid grid-cols-12 gap-8 font-openSans container">
                 <ProductCardByType products={products} />
-                <Cart />
+                <div className="border hidden lg:block border-[#D4D5D9] rounded-md w-full px-2 py-3 col-span-4 mt-14 h-fit">
+                    <Cart />
+                </div>
                 <Pagination />
             </main>
         </>

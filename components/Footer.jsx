@@ -2,8 +2,8 @@ import Logo from "./Logo";
 
 const Footer = () => {
     return (
-        <footer className="bg-baseBlack flex gap-10 items-center justify-around mt-20 container py-20 text-baseWhite font-openSans">
-            <div className="flex flex-col gap-3">
+        <footer className="bg-baseBlack grid grid-cols-12 items-center gap-16 mt-20 container py-20 text-baseWhite font-openSans">
+            <div className="lg:col-span-3 col-span-6 flex flex-col gap-3">
                 <Logo />
                 <p>Got Question? Call us 24/7</p>
                 <p className="font-bold text-[18px]">+02 055 4156 </p>
@@ -69,7 +69,7 @@ const Footer = () => {
                 </svg>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="lg:col-span-3 col-span-6 flex flex-col gap-4">
                 <p className="font-bold text-[20px] mb-7">Company</p>
                 <p className="text-[16px]">About us</p>
                 <p className="text-[16px]">Career</p>
@@ -77,7 +77,7 @@ const Footer = () => {
                 <p className="text-[16px]">Start Selling</p>
                 <p className="text-[16px]">Order History</p>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="lg:col-span-3 col-span-6 flex flex-col gap-4">
                 <p className="font-bold text-[20px] mb-7">My Account</p>
                 <p className="text-[16px]">Track My Order</p>
                 <p className="text-[16px]">View Cart</p>
@@ -85,7 +85,7 @@ const Footer = () => {
                 <p className="text-[16px]">Help</p>
                 <p className="text-[16px]">Wishlist</p>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="lg:col-span-3 col-span-6 flex flex-col gap-4">
                 <p className="font-bold text-[20px] mb-7">Customer Service</p>
                 <p className="text-[16px]">Payment Methods</p>
                 <p className="text-[16px]">Money Return Policy</p>
