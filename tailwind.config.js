@@ -21,7 +21,6 @@ module.exports = {
                 openSans: ["Open Sans", "sans-serif"],
             },
         },
-        
     },
     plugins: [require("@tailwindcss/typography")],
 };
