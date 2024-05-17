@@ -1,6 +1,5 @@
 "use client";
 import { CartContext } from "@/context/cart-context";
-import { ListContext } from "@/context/list-type-context";
 import { useContext } from "react";
 import StarIcon from "./StarIcon";
 
@@ -12,8 +11,7 @@ const ProductCard1 = ({ product }) => {
         rating: { rate, count },
     } = product;
 
-    const { cart, addToCart, removeFromCart } = useContext(CartContext);
-    const { listType } = useContext(ListContext);
+    const { addToCart } = useContext(CartContext);
 
     const handleCart = () => {
         addToCart(product);
