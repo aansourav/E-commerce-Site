@@ -1,9 +1,10 @@
 "use client";
 import { CartContext } from "@/context/cart-context";
+import { ListContext } from "@/context/list-type-context";
 import { useContext } from "react";
 import StarIcon from "./StarIcon";
 
-const Product = ({ product }) => {
+const ProductCard1 = ({ product }) => {
     const {
         title,
         price,
@@ -12,12 +13,11 @@ const Product = ({ product }) => {
     } = product;
 
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
+    const { listType } = useContext(ListContext);
 
     const handleCart = () => {
         addToCart(product);
-        localStorage.setItem("cart", JSON.stringify([...cart, product]));
     };
-
     return (
         <div className="col-span-4 border border-[#D4D5D9] rounded-md pt-3 px-1">
             <div>
@@ -29,8 +29,8 @@ const Product = ({ product }) => {
                 ></div>
                 <div className="p-4">
                     <p className="text-[16px] text-baseBlack font-inter">
-                        {title?.length > 45
-                            ? `${title.substring(0, 45)} ...`
+                        {title?.length > 40
+                            ? `${title.substring(0, 40)} ...`
                             : title}
                     </p>
                     <div className="flex items-center gap-1 mt-3">
@@ -60,4 +60,4 @@ const Product = ({ product }) => {
     );
 };
 
-export default Product;
+export default ProductCard1;

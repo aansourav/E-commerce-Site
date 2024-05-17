@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "@/context/cart-context";
+import { ListTypeProvider } from "@/context/list-type-context";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata = {
     title: "E-commerce Site",
@@ -12,7 +14,10 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                 <Navbar />
-                <CartProvider>{children}</CartProvider>
+                <ListTypeProvider>
+                    <CartProvider>{children}</CartProvider>
+                </ListTypeProvider>
+                <Footer />
             </body>
         </html>
     );

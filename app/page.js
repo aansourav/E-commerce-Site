@@ -1,8 +1,8 @@
 import Cart from "@/components/Cart";
-import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import Pagination from "@/components/Pagination";
-import Product from "@/components/Product";
+import ProductCard1 from "@/components/ProductCard1";
+import ProductCard2 from "@/components/ProductCard2";
 import Search from "@/components/Search";
 
 export default async function Home() {
@@ -23,20 +23,16 @@ export default async function Home() {
                 <div className=" col-span-8 mt-4">
                     <div className="grid grid-cols-12 gap-4 mt-10">
                         {products.map((product) => (
-                            <Product key={product.id} product={product} />
+                            <ProductCard1 key={product.id} product={product} />
                         ))}
                     </div>
                 </div>
-
-                {/* Cart */}
-
+                <div className=" col-span-8 mt-4">
+                    <ProductCard2 />
+                </div>
                 <Cart />
-
-                {/* Cart */}
-
                 <Pagination />
             </main>
-            <Footer />
         </>
     );
 }
