@@ -19,10 +19,6 @@ const CartProduct = ({ product }) => {
 
     const handleDelete = () => {
         removeFromCart(product.id);
-        localStorage.setItem(
-            "cart",
-            JSON.stringify(cart.filter((item) => item.id !== product.id))
-        );
     };
 
     return (
